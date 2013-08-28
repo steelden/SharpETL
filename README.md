@@ -60,46 +60,47 @@ engine.Run();
 
 ### Project Roadmap
 
-- **Windows service**
-It would be very useful if there exists a windows service application that could run a number of preconfigured `IEngine`s.
+- **Windows service**.
+It would be very useful to have a windows service application that could run a number of preconfigured `IEngine`s.
 
-- **Visual configuration tool**
+- **Visual configuration tool**.
 UI is needed for creating and setting up configurations.
 It would greatly simplify process of setting up `IEngine` for non-programmers.
 
-- Documentation
+- Documentation.
 The project really lacks documentation and comments throughout the code.
 Some demo projects would be nice too.
 
-- Tests
+- Tests.
 Project could use more tests.
 First of all tests of `IAction` derived classes.
 
-- XML configuration
+- XML configuration.
 Add `IConfigurationData<T>` for most of actions.
 
-- Fluent configuration
+- Fluent configuration.
 Add simplified *fluent* styled configuration.
 Should look like `c.Fluently.FromXls().Debug().Join(...).ToBinary()`.
 
-- Messaging
+- Messaging.
 Add support for sending and recieving `IElement` objects as messages.
 Potential candidates include [ZeroMQ](http://zeromq.org/), [MassTransit](http://masstransit-project.com/).
 
-- SQLite support
+- SQLite support.
 Due to missing freely available OleDB driver for SQLite support for accessing SQLite databases needs to be added manually.
 
-- Internal logging
+- Internal logging.
 Better internal logging needed to help debug misbehaving configurations.
 
-- Multithreading
+- Multithreading.
 As of now `IEngine` actions run in sequental single threaded mode because of debugging issues.
 Actions should be switched to multithreaded mode using `.ObserveOn(Scheduler.NewThread)` and tested under load.
 
-- Planners
+- Planners.
 `EnumerablePlanner` needs attention. Right now it is in unusable state.
 Implement and experiment with planner based on [Disruptor-net](https://github.com/odeheurles/Disruptor-net) technology.
 Together with ZeroMQ messaging could result in extremely fast data processing.
 
-- Code cleanup
+- Code cleanup.
+
 All `DataElement` specific actions (SharpETL.Actions.Db) should be separated from SharpETL.Actions into a new project (SharpETL.DbActions).
