@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Test", "SharpETL.Test\SharpETL.Test.csproj", "{3DA3D067-D8F9-4A6F-B323-28B6061FB397}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25CCD7F4-0805-4E4C-AD24-7DCF8712B321}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SharpETL.vsmdi = SharpETL.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BBB027CD-0989-42CA-A131-F1719191C402}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Ninject", "SharpETL.Ninject\SharpETL.Ninject.csproj", "{212D6378-6804-4AA1-A275-255887DA01EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Interfaces", "SharpETL.Interfaces\SharpETL.Interfaces.csproj", "{0106B895-7265-4E9E-9F1B-6BAB3A78A121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.NLog", "SharpETL.NLog\SharpETL.NLog.csproj", "{007F7116-8088-419A-8DD7-E8C18F086610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Services", "SharpETL.Services\SharpETL.Services.csproj", "{43812616-6935-4D82-B788-0F444F39C226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Actions", "SharpETL.Actions\SharpETL.Actions.csproj", "{CA140599-CAF3-44C1-A421-C9527CBAD80F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Core", "SharpETL.Core\SharpETL.Core.csproj", "{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.Scripts", "SharpETL.Scripts\SharpETL.Scripts.csproj", "{D600C43C-3745-44CA-8936-F7E4DAFF0C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpETL.IO", "SharpETL.IO\SharpETL.IO.csproj", "{DC619691-6757-42AA-A5C0-5C7637676153}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SharpETL.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DA3D067-D8F9-4A6F-B323-28B6061FB397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA3D067-D8F9-4A6F-B323-28B6061FB397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA3D067-D8F9-4A6F-B323-28B6061FB397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA3D067-D8F9-4A6F-B323-28B6061FB397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212D6378-6804-4AA1-A275-255887DA01EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212D6378-6804-4AA1-A275-255887DA01EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212D6378-6804-4AA1-A275-255887DA01EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212D6378-6804-4AA1-A275-255887DA01EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0106B895-7265-4E9E-9F1B-6BAB3A78A121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0106B895-7265-4E9E-9F1B-6BAB3A78A121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0106B895-7265-4E9E-9F1B-6BAB3A78A121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0106B895-7265-4E9E-9F1B-6BAB3A78A121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007F7116-8088-419A-8DD7-E8C18F086610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007F7116-8088-419A-8DD7-E8C18F086610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007F7116-8088-419A-8DD7-E8C18F086610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007F7116-8088-419A-8DD7-E8C18F086610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43812616-6935-4D82-B788-0F444F39C226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43812616-6935-4D82-B788-0F444F39C226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43812616-6935-4D82-B788-0F444F39C226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43812616-6935-4D82-B788-0F444F39C226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA140599-CAF3-44C1-A421-C9527CBAD80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA140599-CAF3-44C1-A421-C9527CBAD80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA140599-CAF3-44C1-A421-C9527CBAD80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA140599-CAF3-44C1-A421-C9527CBAD80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D600C43C-3745-44CA-8936-F7E4DAFF0C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D600C43C-3745-44CA-8936-F7E4DAFF0C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D600C43C-3745-44CA-8936-F7E4DAFF0C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D600C43C-3745-44CA-8936-F7E4DAFF0C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC619691-6757-42AA-A5C0-5C7637676153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC619691-6757-42AA-A5C0-5C7637676153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC619691-6757-42AA-A5C0-5C7637676153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC619691-6757-42AA-A5C0-5C7637676153}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

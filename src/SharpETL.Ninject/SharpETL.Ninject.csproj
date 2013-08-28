@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{212D6378-6804-4AA1-A275-255887DA01EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpETL.Ninject</RootNamespace>
+    <AssemblyName>SharpETL.Ninject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\SharpETL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonInfo.cs">
+      <Link>Properties\CommonInfo.cs</Link>
+    </Compile>
+    <Compile Include="SharpEtlNinjectModule.cs" />
+    <Compile Include="ExtensionsToIMEConfiguration.cs" />
+    <Compile Include="NinjectServiceResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpETL.Actions\SharpETL.Actions.csproj">
+      <Project>{CA140599-CAF3-44C1-A421-C9527CBAD80F}</Project>
+      <Name>SharpETL.Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.Core\SharpETL.Core.csproj">
+      <Project>{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}</Project>
+      <Name>SharpETL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.Interfaces\SharpETL.Interfaces.csproj">
+      <Project>{0106B895-7265-4E9E-9F1B-6BAB3A78A121}</Project>
+      <Name>SharpETL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.IO\SharpETL.IO.csproj">
+      <Project>{DC619691-6757-42AA-A5C0-5C7637676153}</Project>
+      <Name>SharpETL.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.Scripts\SharpETL.Scripts.csproj">
+      <Project>{D600C43C-3745-44CA-8936-F7E4DAFF0C94}</Project>
+      <Name>SharpETL.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.Services\SharpETL.Services.csproj">
+      <Project>{43812616-6935-4D82-B788-0F444F39C226}</Project>
+      <Name>SharpETL.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SharpETL.snk">
+      <Link>Properties\SharpETL.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

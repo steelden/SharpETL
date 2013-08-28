@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC619691-6757-42AA-A5C0-5C7637676153}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpETL.IO</RootNamespace>
+    <AssemblyName>SharpETL.IO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\SharpETL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\packages\ExcelDataReader.2.1.1\lib\net20\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\ExcelDataReader.2.1.1\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonInfo.cs">
+      <Link>Properties\CommonInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readers\Ascii\AsciiReader.cs" />
+    <Compile Include="Readers\Ascii\AsciiReaderOptions.cs" />
+    <Compile Include="Readers\Dbf\DbfReader.cs" />
+    <Compile Include="Readers\Dbf\DbfReaderOptions.cs" />
+    <Compile Include="Readers\Db\DbReader.cs" />
+    <Compile Include="Readers\Db\DbReaderEx.cs" />
+    <Compile Include="Readers\Db\DbReaderOptions.cs" />
+    <Compile Include="Readers\ExtensionsDataSet.cs" />
+    <Compile Include="Readers\FormatReaderBase.cs" />
+    <Compile Include="Readers\IFormatReader.cs" />
+    <Compile Include="Readers\IReaderFactory.cs" />
+    <Compile Include="Readers\Options\FileOptionsSet.cs" />
+    <Compile Include="Readers\Options\IFileOptionsSet.cs" />
+    <Compile Include="Readers\Options\IOptionsSet.cs" />
+    <Compile Include="Readers\Options\OptionsSet.cs" />
+    <Compile Include="Readers\ReaderFactory.cs" />
+    <Compile Include="Readers\Xls\XlsReader.cs" />
+    <Compile Include="Readers\Xls\XlsReaderOptions.cs" />
+    <Compile Include="Sources\DbReaderExSource.cs" />
+    <Compile Include="Sources\DeferredSource.cs" />
+    <Compile Include="Sources\ISourceFactory.cs" />
+    <Compile Include="Sources\NullSource.cs" />
+    <Compile Include="Sources\SourceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpETL.Core\SharpETL.Core.csproj">
+      <Project>{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}</Project>
+      <Name>SharpETL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpETL.Interfaces\SharpETL.Interfaces.csproj">
+      <Project>{0106B895-7265-4E9E-9F1B-6BAB3A78A121}</Project>
+      <Name>SharpETL.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SharpETL.snk">
+      <Link>Properties\SharpETL.snk</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8D5768F-1E75-4969-B97F-89FC18FD6A0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpETL</RootNamespace>
+    <AssemblyName>SharpETL.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\SharpETL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QuickGraph">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.1.30214.0\lib\Net40\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.1.30214.0\lib\Net40\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.1.30214.0\lib\Net40\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.1.30214.0\lib\Net40\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonInfo.cs">
+      <Link>Properties\CommonInfo.cs</Link>
+    </Compile>
+    <Compile Include="Components\Context.cs" />
+    <Compile Include="Components\DataElement.cs" />
+    <Compile Include="Components\DataEngine.cs" />
+    <Compile Include="Components\DataLink.cs" />
+    <Compile Include="Components\DataSetSource.cs" />
+    <Compile Include="Components\Element.cs" />
+    <Compile Include="Configuration\ConfigurationDataBase.cs" />
+    <Compile Include="Configuration\Configurators\Xml\ActionsElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\IXmlElementHandlersContainer.cs" />
+    <Compile Include="Configuration\Configurators\Xml\IXmlElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\LinksElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\ScriptsElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\ServicesElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\SourcesElementHandler.cs" />
+    <Compile Include="Configuration\Configurators\Xml\XmlElementHandlerBase.cs" />
+    <Compile Include="Configuration\Configurators\Xml\XmlElementHandlersContainer.cs" />
+    <Compile Include="Configuration\EngineConfiguration.cs" />
+    <Compile Include="Configuration\EngineFactory.cs" />
+    <Compile Include="Configuration\Configurators\ManualEngineConfigurator.cs" />
+    <Compile Include="Configuration\MutableEngineConfiguration.cs" />
+    <Compile Include="Configuration\ServiceInfo.cs" />
+    <Compile Include="Configuration\Configurators\XmlEngineConfigurator.cs" />
+    <Compile Include="Extensions\ExtensionsToIContext.cs" />
+    <Compile Include="Extensions\ExtensionsToIMEConfiguration.cs" />
+    <Compile Include="Extensions\ExtensionsToIServiceResolver.cs" />
+    <Compile Include="Extensions\ExtensionsToISource.cs" />
+    <Compile Include="Planning\Enumerable\EnumerablePlan.cs" />
+    <Compile Include="Planning\Enumerable\EnumerablePlanner.cs" />
+    <Compile Include="Planning\Enumerable\EnumerableToObservable.cs" />
+    <Compile Include="Planning\Enumerable\InternalExtensions.cs" />
+    <Compile Include="Planning\Enumerable\ObservableToEnumerable.cs" />
+    <Compile Include="Planning\Reactive\ReactivePlan.cs" />
+    <Compile Include="Planning\Reactive\ReactivePlanner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ActionGraph.cs" />
+    <Compile Include="Utility\ConfigurationDataCollector.cs" />
+    <Compile Include="Utility\DependencyGraph.cs" />
+    <Compile Include="Utility\ReflectionUtils.cs" />
+    <Compile Include="Utility\WeakCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SharpETL.snk">
+      <Link>Properties\SharpETL.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpETL.Interfaces\SharpETL.Interfaces.csproj">
+      <Project>{0106B895-7265-4E9E-9F1B-6BAB3A78A121}</Project>
+      <Name>SharpETL.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
